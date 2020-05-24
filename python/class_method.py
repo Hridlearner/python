@@ -6,7 +6,7 @@ class Mobile:
     @classmethod
     def class_info(cls, ram, self):
         cls.ram= ram
-        print(cls.phone_type, cls.ram, self.kk)
+        print(cls.phone_type, cls.ram, cls.tution)
 
     def __init__(self):
         self.kk=20
@@ -14,10 +14,10 @@ class Mobile:
         print(self.phone_type)
 
     def info(self):
-        print(self.tution)#call class vriabe with instance
-
-    def update_tution(self):
-        self.tution = 3000    
+        print(self.tution)#call class vriabe with instanc
+    @classmethod
+    def update_tution(cls):
+        cls.tution = 3000    
 
 #Mobile.class_info('2gb')
 #print(Mobile.phone_type)
@@ -25,8 +25,10 @@ class Mobile:
 
 m=Mobile()
 print(m.kk)
-m.update_tution()
+Mobile.update_tution() #call class method by usisng class name (conventional)
 m.info()
+
+m2 = Mobile()
 #print(m.phone_type)
 #print(m.ram)
 
